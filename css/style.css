@@ -1,31 +1,31 @@
 body {
   background: salmon;
 }
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .fill {
-  /* background-image: url("http://source.unsplash.com/random/150x150"); */
   position: relative;
   height: 150px;
   width: 150px;
+  overflow: hidden;
   top: 5px;
   left: 5px;
   cursor: pointer;
 }
 
-.fill,
 .fill img {
   margin: 0;
   padding: 0;
-}
-
-.fill img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
 .empty {
-  display: inline-block;
   height: 160px;
   width: 160px;
   margin: 30px;
@@ -44,4 +44,12 @@ body {
 
 .invisible {
   display: none;
+}
+
+.dragging {
+  /*added this class */
+  opacity: 0.5;
+  cursor: grab;
+  position: relative; /* Added this line.. works with relative not absolute */
+  z-index: 1000; /* Added this line */
 }

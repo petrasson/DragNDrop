@@ -13,13 +13,14 @@ container.addEventListener("drop", dragDrop);
 //Drag FUnctions
 function dragStart() {
   this.classList.add("hold");
+  this.classList.add("dragging");
   //console.log("start");
   setTimeout(() => this.classList.add("invisible"), 0);
 }
 
 function dragEnd() {
   //console.log("end");
-  this.classList.remove("hold", "invisible");
+  this.classList.remove("hold", "invisible", "dragging");
 }
 
 //event delegation
