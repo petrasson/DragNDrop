@@ -14,12 +14,10 @@ container.addEventListener("drop", dragDrop);
 function dragStart() {
   this.classList.add("hold");
   this.classList.add("dragging");
-  //console.log("start");
   setTimeout(() => this.classList.add("invisible"), 0);
 }
 
 function dragEnd() {
-  //console.log("end");
   this.classList.remove("hold", "invisible", "dragging");
 }
 
@@ -29,15 +27,14 @@ function dragOver(e) {
   if (e.target.classList.contains("empty")) {
     e.preventDefault();
   }
-  //console.log("over");
 }
 
 function dragEnter(e) {
+  e.preventDefault();
   if (e.target.classList.contains("empty")) {
-    e.preventDefault();
     e.target.classList.add("hovered");
+  } else {
   }
-  //console.log("enter and hover");
 }
 
 function dragLeave(e) {
@@ -47,9 +44,9 @@ function dragLeave(e) {
 }
 
 function dragDrop(e) {
+  e.preventDefault();
   if (e.target.classList.contains("empty")) {
     e.target.classList.remove("hovered");
-    // Append fill to the target if it is empty
-    e.target.append(fill);
+    e.target.appendChild(fill);
   }
 }

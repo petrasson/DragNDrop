@@ -3,8 +3,9 @@ body {
 }
 .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .fill {
@@ -47,9 +48,6 @@ body {
 }
 
 .dragging {
-  /*added this class */
   opacity: 0.5;
   cursor: grab;
-  position: relative; /* Added this line.. works with relative not absolute */
-  z-index: 1000; /* Added this line */
 }
